@@ -40,10 +40,6 @@ a:hover {
     font-size: 1.5rem;
 }
 
-.navbar-toggler {
-    border: none;
-}
-
 /* Gestion du titre du slider */
 .slidertitle {
     left: 0%;
