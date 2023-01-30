@@ -1,4 +1,4 @@
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function() { 
 
     // Variables
 
@@ -120,4 +120,4 @@ window.onload = function () {
             console.log('Erreur lors de la récupération des données depuis l\'API : ', error);
         })
 
-}
+})
