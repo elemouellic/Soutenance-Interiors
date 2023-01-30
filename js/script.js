@@ -29,11 +29,13 @@ window.onload = function () {
 
     //Article aléatoire
 
+    listarticle = 3 //Nombre d'article présents
+
     function randomNumber() {
         let num1, num2
         do {
-            num1 = Math.floor(Math.random() * (3 - 1 + 1)) + 1
-            num2 = Math.floor(Math.random() * (3 - 1 + 1)) + 1
+            num1 = Math.floor(Math.random() * (listarticle)) + 1
+            num2 = Math.floor(Math.random() * (listarticle)) + 1
         } while (num1 === num2)
         return [num1, num2]
     }
@@ -51,8 +53,8 @@ window.onload = function () {
                 res.json().then(data => {
                     let tab = data.content
                     modal = tab[0]
-                    let subString = modal.substring(0,150)
-                    contentDiv1.innerHTML = subString + "..."
+                    let substring = modal.substring(0,150)
+                    contentDiv1.innerHTML = substring + "..."
 
                     dateDiv1.innerHTML = `${data.date.day} ${data.date.month} ${data.date.year}`
                     title1.innerHTML = data.title
@@ -83,14 +85,14 @@ window.onload = function () {
 
         fetch(`https://www.tbads.eu/greta/kercode/ajax/?article=${articlenumber2}`)
         .then(res => {
-            console.log(res);
+            console.log(res)
 
             if (res.ok) {
                 res.json().then(data => {
                     let tab = data.content;
                     modal = tab[0]
-                    let subString = modal.substring(0,150)
-                    contentDiv2.innerHTML = subString + "..."
+                    let substring = modal.substring(0,150)
+                    contentDiv2.innerHTML = substring + "..."
 
                     dateDiv2.innerHTML = `${data.date.day} ${data.date.month} ${data.date.year}`
                     title2.innerHTML = data.title
@@ -106,7 +108,7 @@ window.onload = function () {
 
                         parent.appendChild(p)
 
-                    });
+                    })
                     console.log(data)
                 })
             } else {
